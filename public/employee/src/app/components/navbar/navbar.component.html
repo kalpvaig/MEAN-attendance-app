@@ -1,0 +1,31 @@
+<nav class="use navbar navbar-toggleable-md navbar-light rounded ">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="#" routerLink="/" class="logo-brand">
+        <img src="../../assets/images/logo.png" alt="Kalpvaig Logo">
+       </a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" routerLink="/">Home</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" [hidden]="exp_admin" routerLink="/admin">Admin Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#" [hidden]="!exp_admin" routerLink="/admin/home">Admin's Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#" [hidden]="exp_employee" routerLink="/employee">Employee Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#" [hidden]="!exp_employee" routerLink="/employee/home">Employee's Dashboard</a>
+            </li>
+        </ul>
+     
+      </div>
+</nav>
+<br><br><br><br>

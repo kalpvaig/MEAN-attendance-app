@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="container">
+        <div class="card">
+                <h5 class="card-header text-center text-white" style="background-color: #343a40!important;">Welcome,{{ employeePostData.fname }} {{ employeePostData.lname }} </h5>
+                <div class="card-body">
+                   <div class="table-responsive text-center">   
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                          <tr>
+                                              <th class="text-center">Name</th>
+                                              <th class="text-center">Date of Birth</th>
+                                              <th class="text-center">Email</th>
+                                              <th class="text-center">Phone</th>
+                                              <th class="text-center">Address</th>
+                                              
+                                          </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                          <tr>
+                                              <td><b class="text-info">{{ employeePostData.fname }} {{ employeePostData.lname }}</b></td>
+                                              <td><b class="text-info">{{ employeePostData.dob }}</b></td>
+                                              <td><b class="text-info">{{ employeePostData.email }}</b></td>     
+                                              <td><b class="text-info">{{ employeePostData.phone }}</b></td>
+                                              <td><b class="text-info">{{ employeePostData.address }}</b></td>
+                                          </tr>
+                                        </tbody>
+                                    </table>   
+                 </div>
+            <br>
+            </div>
+            </div>
+            <br>
+            <div class="row text-center">
+                        <div class="col-md-3"></div>     
+                        <div class="col-md-2">    
+                          <button class="btn btn-warning" (click)="onPasswordChange(employeePostData.id)">Change Password</button>
+                        </div> 
+                        <div class="col-md-2">   
+                          <button class="btn btn-success" (click)="onView(employeePostData.id)">View Attendance</button>
+                        </div>  
+                        <div class="col-md-1">   
+                          <button class="btn btn-danger" (click)="logout()">Logout</button>
+                        </div>
+                        <div class="col-md-4"></div> 
+            </div>
+            <br>
+            <div class="card">
+            <h5 class="card-header text-center text-white" [hidden]="flag1" style="background-color: #343a40!important;">Checkin Your Attendance</h5>
+            <h5 class="card-header text-center text-white" [hidden]="flag2" style="background-color: #343a40!important;">Checkout Your Attendance</h5>
+            <h5 class="card-header text-center text-white" [hidden]="flag3" style="background-color: #343a40!important;">Done</h5>
+                <div class="card-body">
+                        
+                        <br>
+                        <div class="row" [hidden]="flag1">
+                                <div class="col-md-4 text-center">
+                                    <h5><b>Work Status:</b></h5>  
+                                </div> 
+                                <div class="col-md-6">
+                                    <select [(ngModel)]="work" name="work" class="form-control">     
+                                            <option value="Present">Present</option>
+                                            <option value="Work from home">Work From Home</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2"></div>
+                        </div>
+                        <div class="text-center" [hidden]="flag2"><h5>You have marked your Attendance & now you can checkout before 8:00 PM</h5></div>
+                        <div class="text-center" [hidden]="flag3"><h5>You have been marked for today.</h5></div>
+                        <br>            
+                        <div class="row" [hidden]="flag1">
+                            <div class="col-md-4 text-center">
+                                <h5><b>Remark:</b></h5>  
+                            </div> 
+                            <div class="col-md-6">    
+                                <input class="form-control" placeholder="Enter Your Remark" type="text" [(ngModel)]="remark" name="remark" required>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <br>
+                        <div class="text-center" [hidden]="flag1">
+                          <button class="btn btn-success" (click)="onCheckIn(employeePostData.id,remark,work)">Mark Checkin</button>
+                        </div>
+                        <div class="text-center" [hidden]="flag2">
+                                <button class="btn btn-success" (click)="onCheckOut(employeePostData.id)">Mark Checkout</button>     
+                        </div>
+                        <br>
+            </div>
+            </div>
+             
+       
+</div>

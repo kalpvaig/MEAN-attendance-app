@@ -1,0 +1,77 @@
+<div class="setwidth">
+<app-navbar></app-navbar>
+<app-admin-sidebar></app-admin-sidebar>
+<div class="main">       
+            <div class="well">
+                    <div class="card mb-4 use">
+                            <div class="card-header text-center text-white" style="background-color: #343a40!important;">
+                              <i class="fas fa-table"></i>
+                              <h4>Employee List</h4>
+                    </div>
+                            <div class="card-body">
+                              <div class="table-responsive text-center">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                    <tr>
+                                      <th class="text-center">Name</th>
+                                      <th class="text-center">Email</th>
+                                      <th class="text-center">Date of Birth<br>(yyyy/mm/dd)</th>
+                                      <th class="text-center">Address</th>
+                                      <th class="text-center">Phone</th>
+                                      <th class="text-center">Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tfoot>
+                                    <tr>
+                                      <th class="text-center">Name</th>
+                                      <th class="text-center">Email</th>
+                                      <th class="text-center">Date of Birth<br>(yyyy/mm/dd)</th>
+                                      <th class="text-center">Address</th>
+                                      <th class="text-center">Phone</th>
+                                      <th class="text-center">Actions</th>
+                                    </tr>
+                                  </tfoot>
+                                  
+                                  <tbody>
+                                    <tr *ngFor="let employee of employees">
+                                      <td class="text-info"><br>{{ employee.fname }} {{ employee.lname }}</td>
+                                      <td class="text-info"><br>{{ employee.email }}</td>
+                                      <td class="text-info"><br>{{ employee.dob }}</td>
+                                      <td class="text-info"><br>{{ employee.address }}</td>
+                                      <td class="text-info"><br>{{ employee.phone }}</td>
+                                      <td>
+                                          <button class="btn btn-warning btn-sm btn-block " (click)="onDeleteClick(employee._id)">Delete</button>
+                                          <!-- Modal HTML -->
+                                            <div id="myModal" class="modal fade">
+                                                <div class="modal-dialog modal-confirm">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">			
+                                                      <h4 class="modal-title">Confirmation</h4>	
+                                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>"data-toggle="modal" href="#myModal""Are you sure you want to delete your employee? This action cannot be undone and you will be unable to recover any data.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button class="btn btn-info" data-dismiss="modal">Cancel</button>
+                                                      <button class="btn btn-danger"  data-dismiss="modal" >Yes, delete it!</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div> 
+                                          <button class="btn btn-secondary btn-sm btn-block top" (click)="onViewClick(employee._id)">View attendance</button>
+                                          <button class="btn btn-success btn-sm btn-block" (click)="onEditClick(employee)">Edit</button> 
+                                                                                    
+                                     </td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                        </div>
+                        </div>
+                        </div>
+                
+                
+            </div>
+        
+        </div>
+      </div>

@@ -1,0 +1,6 @@
+.use{
+  position: fixed;
+  background-color: #343a40!important;
+  width: 100%;
+  z-index: 1;
+}

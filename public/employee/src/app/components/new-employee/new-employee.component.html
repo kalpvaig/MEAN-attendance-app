@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<app-admin-sidebar></app-admin-sidebar>
+<div class="main">
+        <div class="col-md-12 col-md-offset-3" style="margin: auto">
+          <div class="card card-login mx-auto mt-5">
+            <h4 class="card-header text-center text-white" style="background-color: #343a40!important;">New Employee Registration</h4>
+              <div class="card-body">
+                    <form (submit)="onSubmit()" class="text-center">
+                     <div class="row">
+                       <div class="col-md-1"></div>   
+                       <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label><b>First Name</b></label>
+                            <input class="form-control" type="text" [(ngModel)]="employee.fname" name="fname" required>
+                        </div>
+                       </div>
+                       <div class="col-md-2"></div>
+                       <div class="col-md-4"> 
+                            <div class="form-group">
+                                <label><b>Last Name</b></label>
+                                <input class="form-control" type="text" [(ngModel)]="employee.lname" name="lname" required>
+                            </div>
+                       </div>
+                       <div class="col-md-1"></div>
+                    </div>    
+                    <div class="row">
+                       <div class="col-md-1"></div>  
+                       <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label><b>Date of Birth</b></label>
+                            <input class="form-control" type="date" [(ngModel)]="employee.dob" name="dob" required>
+                        </div>
+                       </div>
+                       <div class="col-md-2"></div>
+                       <div class="col-md-4">
+                        <div class="form-group">
+                                <label><b>Phone Number</b></label>
+                                <input class="form-control" type="number" [(ngModel)]="employee.phone" name="phone" required>
+                        </div>
+                      </div>
+                      <div class="col-md-1"></div> 
+                    </div>  
+                    <div class="row">
+                       <div class="col-md-1"></div> 
+                       <div class="col-md-4">
+                        <div class="form-group">
+                                <label><b>Email Address</b></label>
+                                <input class="form-control" type="text" [(ngModel)]="employee.email" name="email" required>
+                            </div> 
+                        </div>
+                       <div class="col-md-2"></div> 
+                       <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label><b>Address</b></label>
+                            <input class="form-control" type="text" [(ngModel)]="employee.address" name="address" required>
+                        </div>
+                       </div>
+                    <div class="col-md-1"></div>     
+                    </div>    
+                    <div class="row">
+                       <div class="col-md-1"></div> 
+                       <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Password</b></label>
+                            <input class="form-control" type="password" [(ngModel)]="employee.password" name="password" required>
+                        </div>
+                       </div>
+                       <div class="col-md-2"></div> 
+                       <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Confirm Password</b></label>
+                            <input class="form-control" type="password" [(ngModel)]="temp.password" name="password" required>
+                        </div>
+                       </div>
+                       <div class="col-md-1"></div>
+                    </div>   
+                        <input type="submit" class="btn text-white" style="background-color: #563d7c;" value="Submit">
+                    
+                    </form>
+            </div>
+            <br>
+        </div>
+    </div>
+ </div>
