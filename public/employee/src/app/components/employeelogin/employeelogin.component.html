@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="col-md-8 col-md-offset-3" style="margin: auto">
+    <div class="card card-login mx-auto mt-5">
+      <h4 class="card-header text-center text-white" style="background-color: #343a40!important;">Employee Login</h4>
+        <div class="card-body">
+          <form class="text-center" novalidate #f="ngForm" (ngSubmit)="login(f)">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" [(ngModel)]="employee.email" name="email"  class="form-control"
+                #userName="ngModel"
+                required
+                >
+                <div *ngIf="userName.errors?.required && userName.touched" class="alert alert-danger">Username is Required</div>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" [(ngModel)]="employee.password" name="password" class="form-control"
+                  #Password="ngModel"
+                  required
+                >
+              <div *ngIf="Password.errors?.required && Password.touched" class="alert alert-danger">Password is Required</div>
+              <br> 
+              <button type="submit" class="btn text-white"  style="background-color: #563d7c;">Login</button>
+          </form>
+          <br>
+        <div class="text-center">
+            <a class="d-block small" href="#">Forgot Password?</a>
+        </div>
+        </div>
+    </div>
+   </div> 
+</div>
